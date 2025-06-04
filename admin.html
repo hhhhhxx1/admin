@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - SMM</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div id="login-section" class="login-page">
+    <h2>Admin Login</h2>
+    <input type="text" id="admin-username" placeholder="Username" />
+    <input type="password" id="admin-password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="admin-panel" class="hidden">
+    <nav>
+      <h1>Admin Panel</h1>
+      <ul>
+        <li onclick="showSection('dashboard')">Dashboard</li>
+        <li onclick="showSection('users')">Users</li>
+        <li onclick="showSection('orders')">Orders</li>
+        <li onclick="showSection('services')">Services</li>
+        <li onclick="logout()">Logout</li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="dashboard" class="panel-section">📊 Welcome to Dashboard</section>
+      <section id="users" class="panel-section hidden">👥 Manage Users here</section>
+      <section id="orders" class="panel-section hidden">🛒 Manage Orders here</section>
+      <section id="services" class="panel-section hidden">
+        <h2>📋 Services</h2>
+        <button onclick="addService()">Add New Service</button>
+        <ul id="service-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
